@@ -134,13 +134,38 @@ return random1;
 console.log(randomNumber(50,40,45))
 
 // 1000 multipled means will get number max 1000 you can change it acording to your requirnment
-</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="20">ID : 20 &amp; Title : repeated value in array, duplicate value in array</lable><textarea class="txt deleat" vat-id="20">var myArray = ["hi","hi","h0","h0","h0" ];
+
+const valWhichRepeat = (arr,count) =&gt; 
+                 [...new Set(arr)].filter(x =&gt; 
+                      arr.filter(a =&gt; a === x).length &gt;= count 
+                 );
+
+console.log(valWhichRepeat(myArray,2))
+console.log(valWhichRepeat(myArray,3))</textarea><lable class="Title deleat count" vat-id="21">ID : 21 &amp; Title : find Parent node By Selector</lable><textarea class="txt deleat" vat-id="21">function collectionHas(a, b) { //helper function (see below)
+    for(var i = 0, len = a.length; i &lt; len; i ++) {
+        if(a[i] == b) return true;
+    }
+    return false;
+}
+function findParentBySelector(elm, selector) {
+    var all = document.querySelectorAll(selector);
+    var cur = elm.parentNode;
+    while(cur &amp;&amp; !collectionHas(all, cur)) { //keep going up until you find a match
+        cur = cur.parentNode; //go up
+    }
+    return cur; //will return null if not found
+}
+
+// var yourElm = document.getElementById("yourElm"); //div in your original code
+// var selector = ".yes";
+// var parent = findParentBySelector(yourElm, selector);</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 19</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 21</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
