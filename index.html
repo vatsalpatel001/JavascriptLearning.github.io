@@ -159,13 +159,25 @@ function findParentBySelector(elm, selector) {
 
 // var yourElm = document.getElementById("yourElm"); //div in your original code
 // var selector = ".yes";
-// var parent = findParentBySelector(yourElm, selector);</textarea></div><br>
+// var parent = findParentBySelector(yourElm, selector);</textarea><lable class="Title deleat count" vat-id="22">ID : 22 &amp; Title : number and commas or coma</lable><textarea class="txt deleat" vat-id="22">console.log(numberWithCommas(4000000)); //40,00,000
+function numberWithCommas(mmm){
+ return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: mmm.length }).format(mmm);
+}
+console.log(numberWithOutCommas("40,00,000.2")); //4000000
+function numberWithOutCommas(jjjj){
+ return parseInt(jjjj.replace(/\,/g,''));
+}</textarea><lable class="Title deleat count" vat-id="23">ID : 23 &amp; Title :  How to parse float with two decimal places in javascript?</lable><textarea class="txt deleat" vat-id="23">parseFloat(jemA1/jem *100).toFixed(2)</textarea><lable class="Title deleat count" vat-id="24">ID : 24 &amp; Title : querySelector with foreach loop</lable><textarea class="txt deleat" vat-id="24">const textarrea = document.querySelectorAll(".txt");
+  var lengthh=textarrea.length;
+  textarrea.forEach(elem =&gt; {
+    elem.addEventListener("input", start);
+    elem.addEventListener("change", stop);
+  });</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 21</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 24</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
