@@ -171,13 +171,19 @@ function numberWithOutCommas(jjjj){
   textarrea.forEach(elem =&gt; {
     elem.addEventListener("input", start);
     elem.addEventListener("change", stop);
-  });</textarea></div><br>
+  });</textarea><lable class="Title deleat count" vat-id="25">ID : 25 &amp; Title : on input grow height , width</lable><textarea class="txt deleat" vat-id="25">function grow(el) {
+	el.style.height = "12rem";
+	el.style.height = (el.scrollHeight) + "px";
+}
+
+
+document.getElementById('vat-id').addEventListener("keyup",grow);</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 24</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 25</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
