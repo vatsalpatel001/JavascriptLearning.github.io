@@ -177,13 +177,21 @@ function numberWithOutCommas(jjjj){
 }
 
 
-document.getElementById('vat-id').addEventListener("keyup",grow);</textarea></div><br>
+document.getElementById('vat-id').addEventListener("keyup",grow);</textarea><lable class="Title deleat count" vat-id="26">ID : 26 &amp; Title : maximum value in array or minimum array </lable><textarea class="txt deleat" vat-id="26">const arr = [-1, 9, 3, -6, 35];
+
+//Only find minimum
+const min = arr.reduce((a,b)=&gt;Math.min(a,b), Infinity);
+console.log("Min:", min);//-6
+
+//Only find maximum
+const max = arr.reduce((a,b)=&gt;Math.max(a,b), -Infinity);
+console.log("Max:", max);//35</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 25</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 26</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
