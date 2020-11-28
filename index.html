@@ -227,13 +227,30 @@ console.log(countr);
 var x = (x === undefined) ? your_default_value : x;</textarea><lable class="Title deleat count" vat-id="31">ID : 31 &amp; Title : queryselector with attribute</lable><textarea class="txt deleat" vat-id="31">// "&lt;img class='test' vat-chek='right' width=30px src='image/two.png'&gt;";
 
 
-document.querySelectorAll("[vat-chek='right']")[2].innerHTML;</textarea></div><br>
+document.querySelectorAll("[vat-chek='right']")[2].innerHTML;</textarea><lable class="Title deleat count" vat-id="32">ID : 32 &amp; Title : New window with custom attribute style</lable><textarea class="txt deleat" vat-id="32">window.open("master.html","_blank", "toolbar=no,scrollbars=yes,resizable=yes,top=200,left=200,width=800,height=200");
+</textarea><lable class="Title deleat count" vat-id="33">ID : 33 &amp; Title : get selected elements </lable><textarea class="txt deleat" vat-id="33">document.body.addEventListener('mouseup',getSelected); 
+function getSelected() {
+var range = window.getSelection().getRangeAt(0),
+  content = range.extractContents(),
+     span = document.createElement('div');
+     console.log(range);
+     console.log(content);
+span.setAttribute("id","imagemaker");
+span.setAttribute("style","padding:5px;");
+span.appendChild(content);
+var htmlContent = span.innerHTML;
+// console.log(span);
+range.insertNode(span);
+}</textarea><lable class="Title deleat count" vat-id="34">ID : 34 &amp; Title : Location Storage, Cache data</lable><textarea class="txt deleat" vat-id="34">localStorage.setItem("mySelect", htmlContent);
+var Y = localStorage.getItem("mySelect");</textarea><lable class="Title deleat count" vat-id="35">ID : 35 &amp; Title : Create Element and appendchild</lable><textarea class="txt deleat" vat-id="35">select = document.createElement('div');
+select.setAttribute("id","hideshow")
+document.body.appendChild(select);</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 31</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 35</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
