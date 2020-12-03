@@ -262,13 +262,41 @@ document.body.appendChild(select);</textarea><lable class="Title deleat count" v
 	link.download = "opt.png";
 	document.body.appendChild(link);
 	link.click();
-	document.body.removeChild(link);</textarea></div><br>
+	document.body.removeChild(link);</textarea><lable class="Title deleat count" vat-id="39">ID : 39 &amp; Title : div to .png div to canvas, div screenShot, Div to Base64</lable><textarea class="txt deleat" vat-id="39">&lt;script src= 
+"https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"&gt;
+  &lt;/script&gt;
+	&lt;script type="text/javascript"&gt;
+	takeshot();
+	function takeshot() { 
+          let div = 
+        document.getElementById('imagemaker'); 
+
+      // Use the html2canvas 
+      // function to take a screenshot 
+      // and append it 
+      // to the output div 
+      html2canvas(div,{backgroundColor: null}).then( 
+        function (canvas) { 
+          // alert(canvas);
+          document.getElementById('output').appendChild(canvas); 
+          document.getElementById('imagemaker').remove();
+          var myImage = canvas.toDataURL();
+           
+            var link = document.createElement('a');
+            link.href = myImage;
+            link.download = "opt.png";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }) 
+    } 
+&lt;/script&gt;</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 38</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 39</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
