@@ -244,13 +244,25 @@ range.insertNode(span);
 }</textarea><lable class="Title deleat count" vat-id="34">ID : 34 &amp; Title : Location Storage, Cache data</lable><textarea class="txt deleat" vat-id="34">localStorage.setItem("mySelect", htmlContent);
 var Y = localStorage.getItem("mySelect");</textarea><lable class="Title deleat count" vat-id="35">ID : 35 &amp; Title : Create Element and appendchild</lable><textarea class="txt deleat" vat-id="35">select = document.createElement('div');
 select.setAttribute("id","hideshow")
-document.body.appendChild(select);</textarea></div><br>
+document.body.appendChild(select);</textarea><lable class="Title deleat count" vat-id="36">ID : 36 &amp; Title : clear selection of selected text or elements </lable><textarea class="txt deleat" vat-id="36">function clearselaction(){
+  document.getElementById('hideshow').remove();
+  if (window.getSelection) {
+  if (window.getSelection().empty) {  // Chrome
+    window.getSelection().empty();
+  } else if (window.getSelection().removeAllRanges) {  // Firefox
+    window.getSelection().removeAllRanges();
+  }
+} else if (document.selection) {  // IE?
+  document.selection.empty();
+}
+
+}</textarea><lable class="Title deleat count" vat-id="37">ID : 37 &amp; Title : editable div or element</lable><textarea class="txt deleat" vat-id="37">document.getElementById("imagemaker").contentEditable = true;</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 35</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 37</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
