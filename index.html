@@ -353,13 +353,20 @@ document.write('&lt;link rel="stylesheet" href="desktop.css"&gt;')
 
         } 
        
-    &lt;/script&gt;</textarea></div><br>
+    &lt;/script&gt;</textarea><lable class="Title deleat count" vat-id="42">ID : 42 &amp; Title : Foreach with parameter and array index</lable><textarea class="txt deleat" vat-id="42">var numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction)
+
+function myFunction(item, index, arr) {
+  arr[index] = item * 10;
+}
+
+document.getElementById("demo").innerHTML = numbers;</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 41</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 42</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
