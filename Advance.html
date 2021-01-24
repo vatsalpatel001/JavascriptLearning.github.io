@@ -148,13 +148,85 @@ function TaggedLiteralEg(strings) {
 TaggedLiteralEg `Vatsal`; 
 
 
+</textarea><lable class="Title deleat count" vat-id="11">ID : 11 &amp; Title : Rest parameter ... (must be last parameter )</lable><textarea class="txt deleat" vat-id="11">// rest with function and other arguments 
+function fun(a,b,...c){ 
+	console.log(`${a} ${b}`); //Mukul Latiyan 
+	console.log(c); //[ 'Lionel', 'Messi', 'Barcelona' ] 
+	console.log(c[0]); //Lionel 
+	console.log(c.length); //3 
+	console.log(c.indexOf('Lionel')); //0 
+} 
+fun('Mukul','Latiyan','Lionel','Messi','Barcelona'); 
+</textarea><lable class="Title deleat count" vat-id="12">ID : 12 &amp; Title : Avoid Wrong Array copy method</lable><textarea class="txt deleat" vat-id="12">// changed the original array 
+let arr = ['a','b','c']; 
+let arr2 = arr; 
+
+arr2.push('d'); 
+
+console.log(arr2); 
+console.log(arr); // even affected the original array(arr) 
+</textarea><lable class="Title deleat count" vat-id="13">ID : 13 &amp; Title : spread operator for copying array</lable><textarea class="txt deleat" vat-id="13">let arr = ['a','b','c']; 
+let arr2 = [...arr]; 
+
+console.log(arr); // [ 'a', 'b', 'c' ] 
+
+arr2.push('d'); //inserting an element at the end of arr2 
+
+console.log(arr2); // [ 'a', 'b', 'c', 'd' ] 
+console.log(arr); // [ 'a', 'b', 'c' ] 
+</textarea><lable class="Title deleat count" vat-id="14 ">ID : 14  &amp; Title : Array Expand concatenate using spread operator</lable><textarea class="txt deleat" vat-id="14 ">// normally used expand method 
+let arr = ['a','b']; 
+let arr2 = [arr,'c','d'];
+let arr3 = [...arr,'c','d'];  
+
+console.log(arr2); // [ [ 'a', 'b' ], 'c', 'd' ] 
+console.log(arr3); // [ 'a', 'b', 'c', 'd' ] </textarea><lable class="Title deleat count" vat-id="15">ID : 15 &amp; Title : Math operation on array</lable><textarea class="txt deleat" vat-id="15">// min in an array using Math.min() 
+let arr = [1,2,3,-1]; 
+console.log(Math.min(arr)); //NaN 
+console.log(Math.min(...arr)); //-1 </textarea><lable class="Title deleat count" vat-id="16">ID : 16 &amp; Title : spread operator VS a rest parameter</lable><textarea class="txt deleat" vat-id="16">How do we tell the difference? Well it entirely depends on how we use it. 
+
+
+The spread operator allows us to expand elements. 
+
+With rest parameters we were able to get a list of arguments into an array. 
+
+spread operators however, let us unpack elements in an array to single/individual arguments.</textarea><lable class="Title deleat count" vat-id="17">ID : 17 &amp; Title : destructuring-assignment,destructuring-assignment,Array to variable</lable><textarea class="txt deleat" vat-id="17">var names = ["alpha", "beta", "gamma", "delta"]; 
+var [firstName, secondName] = names; 
+      
+console.log(firstName);//"alpha" 
+console.log(secondName);//"beta" </textarea><lable class="Title deleat count" vat-id="18">ID : 18 &amp; Title : swap-the-values-of-two-variables-in-javascript</lable><textarea class="txt deleat" vat-id="18">a=5;
+b="hi"
+b = [a, a = b][0];
+
+console.log(a);//hi
+console.log(b);//5
+
+//If you are using ES6+ try this:
+
+[a, b] = [b, a];</textarea><lable class="Title deleat count" vat-id="19">ID : 19 &amp; Title : exponentiation-operator</lable><textarea class="txt deleat" vat-id="19">Math.pow(99,99); // 3.697296376497263e+197
+99 ** 99; // 3.697296376497268e+197
+
+Math.pow(2,2) === 2**2; // FALSE
+
+
+** not supported in IE,.</textarea><lable class="Title deleat count" vat-id="20">ID : 20 &amp; Title : trunc vs floor vs ceil vs round</lable><textarea class="txt deleat" vat-id="20">var v;
+[Math.trunc(v), Math.floor(v), Math.ceil(v), Math.round(v)]
+
+ 3.87 : [ 3,  3,  4,  4]
+ 3.14 : [ 3,  3,  4,  3]
+-3.14 : [-3, -4, -3, -3]
+-3.87 : [-3, -4, -3, -4]
+
+// trunc only remove dot and digit after dot
+// floor always return lower value
+// ceil always return Higher value
+// round works according to situation
 </textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 10</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 20</textarea> 
 	<br>
-	<script type="text/javascript" src="main.js"></script>
-</body>
+	<script type="text/javascript" src="main.js"></script></body>
