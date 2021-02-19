@@ -360,13 +360,36 @@ function myFunction(item, index, arr) {
   arr[index] = item * 10;
 }
 
-document.getElementById("demo").innerHTML = numbers;</textarea></div><br>
+document.getElementById("demo").innerHTML = numbers;</textarea><lable class="Title deleat count" vat-id="43">ID : 43 &amp; Title : find JavaScript variable by its name</lable><textarea class="txt deleat" vat-id="43">var a ="test";
+console.log(a);//test
+window["a"]="hi"//noerr
+//eval("a")="hi"//err
+console.log(window["a"]);//hi
+console.log(eval("a"));//hi</textarea><lable class="Title deleat count" vat-id="44">ID : 44 &amp; Title : Helper Function</lable><textarea class="txt deleat" vat-id="44">var lg= (a) =&gt; console.log(a);// lg("sfgdfg")
+var GetEl = (e) =&gt; {return document.querySelector(e)};// GetEl("#master span")
+var GetEls=  (e) =&gt; {return document.querySelectorAll(e)};
+// EvtsBind(("#master span" ,"input",start);
+var EvtsBind = (e,n,t) =&gt;{let c=GetEls(e);c.forEach(e=&gt;{e.addEventListener(n,t)})}
+// elmsClsRemv(("#master span" ,"num");
+var EvtsRemove = (e,n,t) =&gt;{let c=GetEls(e);c.forEach(e=&gt;{e.removeEventListener(n,t)})}
+var elmsClsRemv = (e,l) =&gt;{GetEls(e).forEach(e=&gt;{e.classList.remove(l)})}
+var elmsClsAdd = (e,l) =&gt;{GetEls(e).forEach(e=&gt;{e.classList.add(l)})}
+function findParentBySelector(e,r){//Independent//e=target elm,r= selector
+  var n=e.outerHTML.search(r);for(var o=GetEls(r),t=e.parentNode;t&amp;&amp;!function(e,r){for(var n=0,o=e.length;n&lt;o;n++)if(e[n]==r)return 1}(o,t);)t=t.parentNode;return t||(-1&lt;n?e:t)
+}
+
+</textarea><lable class="Title deleat count" vat-id="45">ID : 45 &amp; Title : Iframe content to our site,other site content append to document</lable><textarea class="txt deleat" vat-id="45">  var frame = document.getElementsByTagName("IFRAME")[0]
+  var h = frame.contentWindow.document.getElementsByTagName("H1")[0];
+  var x = document.adoptNode(h);
+  document.body.appendChild(x);</textarea><lable class="Title deleat count" vat-id="46">ID : 46 &amp; Title : Event trigger and active element</lable><textarea class="txt deleat" vat-id="46"> let x = document.activeElement;
+let event = new Event("click");
+  x.dispatchEvent(event);</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 42</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 46</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
