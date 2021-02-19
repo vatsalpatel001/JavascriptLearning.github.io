@@ -4,18 +4,229 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="mastermind();">
-	<div class="head" id="head">Advance Javascript Concept Dump By Vatsal Patel</div><br>
+	<div class="head" id="head">Javascript Code Dump By Vatsal Patel</div><br>
 	<br>
-	<div id="master"></div><br>
+	<div id="master"><lable class="Title deleat count" vat-id="1">ID : 1 &amp; Title : null vs Undefined</lable><textarea class="txt deleat" vat-id="1">var name = null; //null
+var age; //undefined 
+
+console.log(typeof null); // objec 
+console.log(typeof undefined); // undefined 
+
+console.log( null === undefined ); //false
+console.log( null == undefined );  //true
+
+//So for if condi. you can use any one,
+
+if(name==null){
+	//executed
+}
+if(name==undefined){
+	//executed
+}</textarea><lable class="Title deleat count" vat-id="2">ID : 2 &amp; Title : for In vs for of (in for obj &amp; of for array) </lable><textarea class="txt deleat" vat-id="2">var person = {fname:"John", lname:"Doe", age:25}; 
+  
+  var text = "";
+  var x;
+  for (x in person) {
+    text += person[x] + " ";
+  }
+
+  console.log(text)  // John Doe 25
+
+var cars = ['BMW', 'Volvo', 'Mini'];
+var x;
+  var text = "";
+for (x of cars) {
+text += x + " ";
+}
+
+ console.log(text)  // BMW Volvo Mini</textarea><lable class="Title deleat count" vat-id="3">ID : 3 &amp; Title : IIFE</lable><textarea class="txt deleat" vat-id="3">An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+(function () {
+    statements
+})();
+
+It is a design pattern which is also known as a Self-Executing Anonymous Function and contains two major parts:
+The variable within the expression can not be accessed from outside it.
+(function () {
+    var aName = "Barry";
+})();
+// Variable aName is not accessible from the outside scope
+
+
+Assigning the IIFE to a variable stores the function's return value, not the function definition itself.
+
+
+var result = (function () {
+    var name = "Barry";
+    return name;
+})();
+// Immediately creates the output:
+result; // "Barry"</textarea><lable class="Title deleat count" vat-id="4">ID : 4 &amp; Title : The conditional (ternary) operator(?)</lable><textarea class="txt deleat" vat-id="4">The conditional (ternary) operator(?), is used as a shortcut for the if statement.
+
+function getFee(isMember) {
+  return (isMember ? '$2.00' : '$10.00');
+}
+
+console.log(getFee(true));
+// expected output: "$2.00"
+
+console.log(getFee(false));
+// expected output: "$10.00"
+
+console.log(getFee(null));
+// expected output: "$10.00"</textarea><lable class="Title deleat count" vat-id="5">ID : 5 &amp; Title : parameters vs arguments</lable><textarea class="txt deleat" vat-id="5">Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the function.</textarea><lable class="Title deleat count" vat-id="6">ID : 6 &amp; Title : Function Expressions</lable><textarea class="txt deleat" vat-id="6">A JavaScript function can also be defined using an expression.
+
+A function expression can be stored in a variable:
+
+var x = function (a, b) {return a * b};
+var z = x(4, 3);
+
+After a function expression has been stored in a variable, the variable can be used as a function:</textarea><lable class="Title deleat count" vat-id="7">ID : 7 &amp; Title : hoisting </lable><textarea class="txt deleat" vat-id="7">definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
+
+it allows you to use a function before you declare it in your code.
+
+The variables can be initialized and used before they are declared.
+
+
+JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined.
+
+
+console.log(num); // Returns undefined, as only declaration was hoisted, no initialization has happened at this stage
+var num; // Declaration
+num = 6; // Initialization
+
+Initializations using let and const are also not hoisted. 
+
+
+// Example with let:
+a = 1; // initialization.
+let a; // Throws ReferenceError: Cannot access 'a' before initialization
+
+// Example with const:
+a = 1; // initialization.
+const a; // Throws SyntaxError: Missing initializer in const declaration
+
+
+JavaScript in strict mode does not allow variables to be used if they are not declared.
+
+
+
+</textarea><lable class="Title deleat count" vat-id="8">ID : 8 &amp; Title : Template literal   backtick (`)</lable><textarea class="txt deleat" vat-id="8">syntx
+var s=`some string`;
+
+\n not required,..
+
+// Without template literal 
+console.log('Some text that I want \non two lines!'); 
+  
+// With template literal 
+console.log(`Some text that I want 
+on two lines!`); 
+
+
+
+
+
+
+</textarea><lable class="Title deleat count" vat-id="9">ID : 9 &amp; Title : Expressions ${} syntax</lable><textarea class="txt deleat" vat-id="9">let principal = 1000; 
+let noofyears = 1; 
+let rateofinterest = 7; 
+  
+let SI = `Simple Interest is ${(principal * 
+            noofyears * rateofinterest)/100}`; </textarea><lable class="Title deleat count" vat-id="10">ID : 10 &amp; Title : Tagged Templates</lable><textarea class="txt deleat" vat-id="10">Tagged Literal is written like a function definition,
+
+ but the difference is when this literal is called.
+
+ There is no parenthesis() to a literal call.
+
+ An array of Strings are passed as a parameter to a literal.
+
+
+function TaggedLiteralEg(strings) { 
+    document.write(strings); 
+} 
+  
+TaggedLiteralEg `Vatsal`; 
+
+
+</textarea><lable class="Title deleat count" vat-id="11">ID : 11 &amp; Title : Rest parameter ... (must be last parameter )</lable><textarea class="txt deleat" vat-id="11">// rest with function and other arguments 
+function fun(a,b,...c){ 
+	console.log(`${a} ${b}`); //Mukul Latiyan 
+	console.log(c); //[ 'Lionel', 'Messi', 'Barcelona' ] 
+	console.log(c[0]); //Lionel 
+	console.log(c.length); //3 
+	console.log(c.indexOf('Lionel')); //0 
+} 
+fun('Mukul','Latiyan','Lionel','Messi','Barcelona'); 
+</textarea><lable class="Title deleat count" vat-id="12">ID : 12 &amp; Title : Avoid Wrong Array copy method</lable><textarea class="txt deleat" vat-id="12">// changed the original array 
+let arr = ['a','b','c']; 
+let arr2 = arr; 
+
+arr2.push('d'); 
+
+console.log(arr2); 
+console.log(arr); // even affected the original array(arr) 
+</textarea><lable class="Title deleat count" vat-id="13">ID : 13 &amp; Title : spread operator for copying array</lable><textarea class="txt deleat" vat-id="13">let arr = ['a','b','c']; 
+let arr2 = [...arr]; 
+
+console.log(arr); // [ 'a', 'b', 'c' ] 
+
+arr2.push('d'); //inserting an element at the end of arr2 
+
+console.log(arr2); // [ 'a', 'b', 'c', 'd' ] 
+console.log(arr); // [ 'a', 'b', 'c' ] 
+</textarea><lable class="Title deleat count" vat-id="14 ">ID : 14  &amp; Title : Array Expand concatenate using spread operator</lable><textarea class="txt deleat" vat-id="14 ">// normally used expand method 
+let arr = ['a','b']; 
+let arr2 = [arr,'c','d'];
+let arr3 = [...arr,'c','d'];  
+
+console.log(arr2); // [ [ 'a', 'b' ], 'c', 'd' ] 
+console.log(arr3); // [ 'a', 'b', 'c', 'd' ] </textarea><lable class="Title deleat count" vat-id="15">ID : 15 &amp; Title : Math operation on array</lable><textarea class="txt deleat" vat-id="15">// min in an array using Math.min() 
+let arr = [1,2,3,-1]; 
+console.log(Math.min(arr)); //NaN 
+console.log(Math.min(...arr)); //-1 </textarea><lable class="Title deleat count" vat-id="16">ID : 16 &amp; Title : spread operator VS a rest parameter</lable><textarea class="txt deleat" vat-id="16">How do we tell the difference? Well it entirely depends on how we use it. 
+
+
+The spread operator allows us to expand elements. 
+
+With rest parameters we were able to get a list of arguments into an array. 
+
+spread operators however, let us unpack elements in an array to single/individual arguments.</textarea><lable class="Title deleat count" vat-id="17">ID : 17 &amp; Title : destructuring-assignment,destructuring-assignment,Array to variable</lable><textarea class="txt deleat" vat-id="17">var names = ["alpha", "beta", "gamma", "delta"]; 
+var [firstName, secondName] = names; 
+      
+console.log(firstName);//"alpha" 
+console.log(secondName);//"beta" </textarea><lable class="Title deleat count" vat-id="18">ID : 18 &amp; Title : swap-the-values-of-two-variables-in-javascript</lable><textarea class="txt deleat" vat-id="18">a=5;
+b="hi"
+b = [a, a = b][0];
+
+console.log(a);//hi
+console.log(b);//5
+
+//If you are using ES6+ try this:
+
+[a, b] = [b, a];</textarea><lable class="Title deleat count" vat-id="19">ID : 19 &amp; Title : exponentiation-operator</lable><textarea class="txt deleat" vat-id="19">Math.pow(99,99); // 3.697296376497263e+197
+99 ** 99; // 3.697296376497268e+197
+
+Math.pow(2,2) === 2**2; // FALSE
+
+
+** not supported in IE,.</textarea><lable class="Title deleat count" vat-id="20">ID : 20 &amp; Title : trunc vs floor vs ceil vs round</lable><textarea class="txt deleat" vat-id="20">var v;
+[Math.trunc(v), Math.floor(v), Math.ceil(v), Math.round(v)]
+
+ 3.87 : [ 3,  3,  4,  4]
+ 3.14 : [ 3,  3,  4,  3]
+-3.14 : [-3, -4, -3, -3]
+-3.87 : [-3, -4, -3, -4]
+
+// trunc only remove dot and digit after dot
+// floor always return lower value
+// ceil always return Higher value
+// round works according to situation
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 42</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 20</textarea> 
 	<br>
-	
-	<script type="text/javascript" src="main.js"></script>
-
-
-</body>
+	<script type="text/javascript" src="main.js"></script></body>
