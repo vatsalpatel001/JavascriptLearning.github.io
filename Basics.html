@@ -385,13 +385,25 @@ function findParentBySelector(e,r){//Independent//e=target elm,r= selector
 let event = new Event("click");
   x.dispatchEvent(event);</textarea><lable class="Title deleat count" vat-id="47">ID : 47 &amp; Title : change custom cursor image origin hotspot</lable><textarea class="txt deleat" vat-id="47">cursor: url(image) [x y|auto];
 var dataURL = canvas.toDataURL('image/png')
-document.body.style.cursor = 'url('+dataURL+') 0 20, auto';</textarea></div><br>
+document.body.style.cursor = 'url('+dataURL+') 0 20, auto';</textarea><lable class="Title deleat count" vat-id="48">ID : 48 &amp; Title : input box value change on mousewheel </lable><textarea class="txt deleat" vat-id="48">function onmousewheel(e){ 
+  let x = e.target;
+  1&lt;e.deltaY&amp;&amp;x.value&lt;parseInt(x.max)&amp;&amp;x.value++;
+  e.deltaY&lt;-1&amp;&amp;x.value&gt;parseInt(x.min)&amp;&amp;x.value--;
+}
+
+// &lt;input type="number" min="50" max="2000"&gt;
+ var EvtsBind = (e,n,t) =&gt;{let c=GetEls(e);c.forEach(e=&gt;{e.addEventListener(n,t)})}
+
+ EvtsBind('[type="number"',"mousewheel",onmousewheel);
+
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 47</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 48</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
