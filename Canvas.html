@@ -7,12 +7,51 @@
 	<div class="head" id="head">Javascript Code Dump By Vatsal Patel</div><br>
 	<br>
 	<div id="master">
-</div><br>
+<lable class="Title deleat count" vat-id="1">ID : 1 &amp; Title : Css icons to png or custom cursor draw icons on canvas</lable><textarea class="txt deleat" vat-id="1">window.addEventListener('load', (event) =&gt; {
+  CssIcoSvg(document.getElementById("Pensil"),"#000000","icomoon")
+});
+function CssIcoSvg(elemt,fnt_clr,fnt_family){
+  let xx = window.getComputedStyle(elemt, ':before').getPropertyValue('content');
+  xx= xx.replace(/['"]/g, '')
+   let canvas = document.createElement("canvas");
+    canvas.width = 24;
+    canvas.height = 24;
+    // document.body.appendChild(canvas);
+   let ctx = canvas.getContext("2d");
+    // ctx.fillStyle = "#000000";
+    ctx.fillStyle = fnt_clr;
+    // ctx.font = "24px "+family;
+    ctx.font = "24px "+fnt_family;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(xx, 12, 12);
+    var dataURL = canvas.toDataURL('image/png');
+    document.body.style.cursor = 'url('+dataURL+') 0 20, auto';
+    //0 20 x,y is offset for perfect hotspot( mouse click )
+}
+
+
+//font file load hase toj work karse
+
+
+
+// to check it in css
+// @font-face {
+//     font-family: 'icomoon';
+//     src:  url('../fonts/icomoon.eot');
+//     src:  url('../fonts/icomoon.eot') format('embedded-opentype'),
+//       url('../fonts/icomoon.ttf') format('truetype'),
+//       url('../fonts/icomoon.woff') format('woff'),
+//       url('../fonts/icomoon.svg#icomoon') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: block;
+//   }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 20</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 1</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
