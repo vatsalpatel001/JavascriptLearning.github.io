@@ -60,12 +60,15 @@ function CssIcoSvg(elemt,fnt_clr,fnt_family){
     b: imgData.data[index + 2],
     a: imgData.data[index + 3]
   };
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="3">ID : 3 &amp; Title : Flood fill , Area fill in canvas on x,y pos</lable><textarea class="txt deleat" vat-id="3">// Bucket(Canvas, ctx, Flood_clr,xP,yP);// clr in hax, xp and yp must be int,..
+function Bucket(e,t,o,l,r){if(!(this instanceof Bucket))return new Bucket(e,t,o,l,r);var n=this,i=e.getContext("2d");this.canvas=e,t=t||{},this.colour=o,this.tolerance=void 0===t.tolerance||isNaN(""+t.tolerance)?10:t.tolerance,this.fill_tolerance=10,console.log(e.getClientRects()),o=e.getClientRects()[0],t=i.getImageData(0,0,o.width,o.height),o=(e=new Function("x","y","return 4 * (y * "+t.width+" + x)"))(l,r),console.log(l),tolerance_equal(o=t.data.slice(o,o+4),0,n.parsed_colour,n.fill_tolerance)||(flood_fill(t.data,e,{x:l,y:r},n.parsed_colour,o,n.tolerance,t.width,t.height),i.putImageData(t,0,0))}function tolerance_equal(e,t,o,l){var r=o.length,n=t+r;for(l=l||0;n--&amp;&amp;r--;)if(Math.abs(e[n]-o[r])&gt;l)return!1;return!0}function flood_fill(e,t,o,l,r,n,i,a){for(var c,s,u,f,_,d,p,h=[o],g={},y=flood_fill.steps;o=h.pop();)if(tolerance_equal(e,f=t(s=o.x,u=o.y),r,n))for(_=flood_fill.fill_ways;_--;)_&lt;4&amp;&amp;(e[f+_]=l[_]),c=(d=s+y[_][0])+","+(p=u+y[_][1]),d&lt;0||p&lt;0||i&lt;=d||a&lt;=p||g[c]||(h.push({x:d,y:p}),g[c]=!0)}Object.defineProperty(Bucket.prototype,"colour",{get:function(){return this.__colour},set:function(e){var t=Bucket.__parse_colour_rgx.exec(e||"");t?(this.__colour=e,this.__parsed_colour=t.slice(1).map(function(e){return e=parseInt(e,16),isNaN(e)||e&lt;0||255&lt;e?255:e})):window.DEBUG&amp;&amp;console.warn("Invalid colour set: ",e)}}),Object.defineProperty(Bucket.prototype,"parsed_colour",{get:function(){return this.__parsed_colour}}),Bucket.__parse_colour_rgx=/^#?([0-9a-f]{1,2})([0-9a-f]{1,2})([0-9a-f]{1,2})([0-9a-f]{1,2})?$/i,flood_fill.steps=[[1,0],[0,1],[0,-1],[-1,0]],Object.defineProperty(flood_fill,"fill_ways",{get:function(){return flood_fill.steps.length}});
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 2</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 3</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
