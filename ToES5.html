@@ -1,0 +1,34 @@
+<head>
+	<title>Javascript Code Dump By Vatsal Patel</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		#code0,#code3{
+			width: 40vw;
+			height: 70vh;
+			line-height: 26px;
+		}
+	</style>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body onload="mastermind();">
+	<div class="head" id="head">Javascript Code Dump By Vatsal Patel</div><br>
+	<br>
+	<div id="master">
+</div><br>
+	<br>
+	
+	<textarea class="sub subover" id="code0" placeholder="code"></textarea>
+	<textarea class="sub subover" id="code3" placeholder="code"></textarea>
+	<a href="javascript:converter()" id="btn">Convert</a> <br>
+	<script type="text/javascript">
+function converter() {
+		var input = document.getElementById('code0').value;
+		var output = document.getElementById('code3');
+		output.innerHTML = Babel.transform(input, { presets: ['env'] }).code;
+}
+	</script>
+
+	<script type="text/javascript" src="main.js"></script>
+</body>
