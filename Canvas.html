@@ -127,12 +127,79 @@ let y = n.targetTouches[0].pageY - A_C.getBoundingClientRect().top;
 lastEvt =n; //used in touch end
 console.log(x,y);
 }
+</textarea><lable class="Title deleat count" vat-id="5">ID : 5 &amp; Title : Canvas image rotate</lable><textarea class="txt deleat" vat-id="5">function rotateImage(degree){
+  // var img = document.createElement("img");
+img.src = A_C.toDataURL();
+    img.onload = function() {
+let rad = degree* Math.PI / 180; 
+let w,h,x,y;
+w = img.width ;
+h = img.height ;
+let canvasTemp = GetEl("#vatCanvas100");
+// let canvasTemp = document.createElement("canvas");
+let ctxTemp = canvasTemp.getContext("2d");
+let Origin = TranslateXYImgRotate(degree,w,h);
+canvasTemp.width = Math.abs(w * Math.cos(rad)) + Math.abs(h * Math.sin(rad));
+canvasTemp.height  = Math.abs(w * Math.sin(rad)) + Math.abs(h * Math.cos(rad));
+ctxTemp.save();
+ctxTemp.translate(Origin[0], Origin[1]);
+ctxTemp.rotate(rad);
+ctxTemp.drawImage(img, 0,0);
+ ctxTemp.restore();
+    }
+}
+
+
+
+function TranslateXYImgRotate(deg, w, h) {// w,h image naturl width hight
+  let rad = deg * Math.PI / 180;
+  const sin_Height = h * Math.abs(Math.sin(rad))
+  const cos_Height = h * Math.abs(Math.cos(rad))
+  const cos_Width = w * Math.abs(Math.cos(rad))
+  const sin_Width = w * Math.abs(Math.sin(rad))
+  let xOrigin, yOrigin;
+  let boundaryRad = Math.atan(w / h);
+  if (rad &lt; boundaryRad) {
+    // debug('case1');
+    xOrigin = Math.min(sin_Height, cos_Width);
+    yOrigin = 0;
+  } else if (rad &lt; Math.PI / 2) {
+    // debug('case2');
+    xOrigin = Math.max(sin_Height, cos_Width);
+    yOrigin = 0;
+  } else if (rad &lt; Math.PI / 2 + boundaryRad) {
+    // debug('case3');
+    xOrigin = width;
+    yOrigin = Math.min(cos_Height, sin_Width);
+  } else if (rad &lt; Math.PI) {
+    // debug('case4');
+    xOrigin = width;
+    yOrigin = Math.max(cos_Height, sin_Width);
+  } else if (rad &lt; Math.PI + boundaryRad) {
+    // debug('case5');
+    xOrigin = Math.max(sin_Height, cos_Width);
+    yOrigin = height;
+  } else if (rad &lt; Math.PI / 2 * 3) {
+    // debug('case6');
+    xOrigin = Math.min(sin_Height, cos_Width);
+    yOrigin = height;
+  } else if (rad &lt; Math.PI / 2 * 3 + boundaryRad) {
+    // debug('case7');
+    xOrigin = 0;
+    yOrigin = Math.max(cos_Height, sin_Width);
+  } else if (rad &lt; Math.PI * 2) {
+    // debug('case8');
+    xOrigin = 0;
+    yOrigin = Math.min(cos_Height, sin_Width);
+  }
+  return [xOrigin, yOrigin];
+}
 </textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 4</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 5</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
