@@ -415,13 +415,45 @@ function GFG_Fun(n){
   var dataURL = ctx.canvas.toDataURL("image/png");
   // return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   return dataURL;
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="51">ID : 51 &amp; Title : clone an array/objects without reference</lable><textarea class="txt deleat" vat-id="51">numbers = [1, 2, 3];
+numbersCopy = [...numbers];
+
+This doesn’t safely copy multi-dimensional arrays. Array/object, values are copied by reference instead of by value.
+
+
+nestedNumbers = [[1], [2]];
+numbersCopy = [...nestedNumbers];
+
+numbersCopy[0].push(300);
+console.log(nestedNumbers, numbersCopy);
+// [[1, 300], [2]]
+// [[1, 300], [2]]
+// They've both been changed because they share references
+
+
+//so solution is 
+//JSON.parse and JSON.stringify (Deep copy);
+
+
+nestedNumbers = [[1], [2]];
+numbersCopy = JSON.parse(JSON.stringify(nestedNumbers));
+
+numbersCopy[0].push(300);
+console.log(nestedNumbers, numbersCopy);
+
+// [[1], [2]]
+// [[1, 300], [2]]
+// These two arrays are completely separate!
+
+
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 50</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 51</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
