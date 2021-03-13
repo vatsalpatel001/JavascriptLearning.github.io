@@ -451,13 +451,28 @@ console.log(nestedNumbers, numbersCopy);
 
 let y1 = 20 ; let y2 = 50 ;
 
-[y1,y2] = RndmSawp(y1,y2);</textarea></div><br>
+[y1,y2] = RndmSawp(y1,y2);</textarea><lable class="Title deleat count" vat-id="53">ID : 53 &amp; Title : String similarity finder, string matcher</lable><textarea class="txt deleat" vat-id="53">console.log(similar('hiiii',"hiiii"));//100%
+console.log(similar('hiiii',"hiiiR"));//80%
+function similar(a,b) {
+    var equivalency = 0;
+    var minLength = (a.length &gt; b.length) ? b.length : a.length;    
+    var maxLength = (a.length &lt; b.length) ? b.length : a.length;    
+    for(var i = 0; i &lt; minLength; i++) {
+        if(a[i] == b[i]) {
+            equivalency++;
+        }
+    }
+    
+
+    var weight = equivalency / maxLength;
+    return (weight * 100) + "%";
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 52</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 53</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
