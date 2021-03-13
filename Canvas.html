@@ -204,12 +204,40 @@ so try to use base64 image rather than local image!!!
 </textarea><lable class="Title deleat count" vat-id="7">ID : 7 &amp; Title : bug :Canvas Draw image Quality loss</lable><textarea class="txt deleat" vat-id="7">canvas.setAttribute('height', canvas.getBoundingClientRect().height);
   canvas.setAttribute('width', canvas.getBoundingClientRect().width);
 
-//set height and width attribute to canvas elem</textarea></div><br>
+//set height and width attribute to canvas elem</textarea><lable class="Title deleat count" vat-id="8">ID : 8 &amp; Title : Flood fill points find</lable><textarea class="txt deleat" vat-id="8">x0,y0 are canvas center points,
+width is elem/grid width + gap
+Qty is how many points you wants! 
+all parameters are number,
+function will return arr =[[x1,y1],[x2,y2],...]
+
+
+function FloodfillPoints(x0, y0, width, Qty) {
+	let op1 = "+",
+		yf = 0,
+		j3 = 1,
+		sss = 0,
+		P_arr = [],
+		j = 0;
+	for (; sss &lt; Qty;) {
+		j++;		
+			x1 = x0 - j * width,
+			xDup = x0 - ((j + 1) * width),
+			x2 = x0 + j * width,
+			y1 = y0 + yf * width;
+		1 == j &amp;&amp; sss &lt; Qty &amp;&amp; (P_arr.push([x0, y1]), sss++),
+		 xDup &lt;= 0 &amp;&amp; (j = 0, "-" == op1 ? op1 = "+" : "+" == op1 &amp;&amp; (op1 = "-"),
+		  yf = eval(yf + op1 + j3), j3++), sss += 2,
+		   P_arr.push([x1, y1]),
+		   P_arr.push([x2, y1])
+	}
+	for (; P_arr.length &gt; Qty;) P_arr.pop();
+	return P_arr
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 7</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 8</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
