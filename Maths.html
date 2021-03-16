@@ -12,12 +12,40 @@
   var dx = ex - cx;
   var theta = Math.atan2(dy, dx); // range (-PI, PI]
   return theta;
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="2">ID : 2 &amp; Title : Find Possible Arrangements == permutation</lable><textarea class="txt deleat" vat-id="2">//A permutation is a mathematical technique that determines the number of possible arrangements in a set,
+
+console.log(permute("12"))//["12", "21"];
+console.log(permute("ABC"))//["ABC", "ACB", "BAC", "BCA", "CAB", "CBA"];
+
+function permute(t) {
+  var u = [],
+    a = t.length,
+    f = Array(a),
+    i = Array(a);
+  ! function r(n) {
+    if (n == a) return u.push(i.slice());
+    for (var e = 0; e &lt; a; ++e) f[e] || (f[e] = !0, i[n] = t[e], r(n + 1), f[e] = !1)
+  }(0);
+  let r = [];
+  for (let j = 0; j &lt; u.length; j++) r[j] = u[j].join("");
+  return r
+}
+
+
+
+
+
+
+
+
+
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 1</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 2</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
