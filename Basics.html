@@ -466,13 +466,44 @@ function similar(a,b) {
 
     var weight = equivalency / maxLength;
     return (weight * 100) + "%";
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="54">ID : 54 &amp; Title : Html json data read</lable><textarea class="txt deleat" vat-id="54">  let link = "https://ewmw.edelweiss.in/api/Market/Process/EquityDetailsMarket/" + 1375;
+  getJesonData(link, log);
+
+  function log(data) {
+  	console.log(JSON.parse(JSON.parse(data)))
+  }
+
+  function getJesonData(link, callback) {
+  	let xmlhttp = new XMLHttpRequest();
+  	xmlhttp.open("GET", link, true);
+  	if (xmlhttp) {
+  		xmlhttp.send();
+  	}
+  	xmlhttp.onreadystatechange = function() {
+  		if (this.readyState == 4 &amp;&amp; this.status == 200) {
+  			callback(this.responseText);
+  		}
+  	};
+  }</textarea><lable class="Title deleat count" vat-id="55">ID : 55 &amp; Title : Touchend event have no event api!!</lable><textarea class="txt deleat" vat-id="55">//How to capture touchend coordinates?
+//You need to store the values on touchmove and read it in touchend.
+
+var lastMove = null;
+
+
+div.addEvent('touchend', function(event) {
+  // use lastMove event api here!!,,,,
+});
+
+
+div.addEvent('touchmove', function(event) {
+  lastMove = event;
+});</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 53</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 55</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
