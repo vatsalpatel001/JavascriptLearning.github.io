@@ -123,18 +123,7 @@ function getOccurrence(array, value) {
     return count;
 }
 // console.log(getOccurrence(arr, 1));  // 2
-// console.log(getOccurrence(arr, 3));  // 3</textarea><lable class="Title deleat count" vat-id="19">ID : 19 &amp; Title : random Number between to number</lable><textarea class="txt deleat" vat-id="19">function randomNumber(max,min,not){
-random1 = Math.floor(Math.random() * 1000);
- while (random1&gt;max ||random1==0 || random1&lt;min || random1==not ) {
-            random1 = Math.floor(Math.random() * 1000);
-}
-return random1;
-}
-
-console.log(randomNumber(50,40,45))
-
-// 1000 multipled means will get number max 1000 you can change it acording to your requirnment
-</textarea><lable class="Title deleat count" vat-id="20">ID : 20 &amp; Title : repeated value in array, duplicate value in array</lable><textarea class="txt deleat" vat-id="20">var myArray = ["hi","hi","h0","h0","h0" ];
+// console.log(getOccurrence(arr, 3));  // 3</textarea><lable class="Title deleat count" vat-id="20">ID : 20 &amp; Title : repeated value in array, duplicate value in array</lable><textarea class="txt deleat" vat-id="20">var myArray = ["hi","hi","h0","h0","h0" ];
 
 const valWhichRepeat = (arr,count) =&gt; 
                  [...new Set(arr)].filter(x =&gt; 
@@ -497,7 +486,24 @@ div.addEvent('touchend', function(event) {
 
 div.addEvent('touchmove', function(event) {
   lastMove = event;
-});</textarea></div><br>
+});</textarea><lable class="Title deleat count" vat-id="19">ID : 19 &amp; Title : random Number between two number -updated</lable><textarea class="txt deleat" vat-id="19">// more compact version , 
+let BetweenRendomNumber = (max,min) =&gt; Math.floor(Math.random()*(max-min))+min;
+console.log(BetweenRendomNumber(10000,5000));
+
+//previous version stuck in while loop!!
+
+
+function randomNumber(max,min,not){
+random1 = Math.floor(Math.random() * 1000);
+ while (random1&gt;max ||random1==0 || random1&lt;min || random1==not ) {
+            random1 = Math.floor(Math.random() * 1000);
+}
+return random1;
+}
+
+console.log(randomNumber(50,40,45))
+
+// 1000 multipled means will get number max 1000 you can change it acording to your requirnment</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
