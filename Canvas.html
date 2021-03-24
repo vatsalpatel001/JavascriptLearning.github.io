@@ -232,12 +232,53 @@ function FloodfillPoints(x0, y0, width, Qty) {
 	}
 	for (; P_arr.length &gt; Qty;) P_arr.pop();
 	return P_arr
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="9">ID : 9 &amp; Title : Chart Grid and arrow Drawer</lable><textarea class="txt deleat" vat-id="9">var controlPoints = [0, 1, -10, 1, -10, 5];
+
+//arrow
+!function(t){t&amp;&amp;t.prototype&amp;&amp;(t.prototype.arrow=function(t,o,n,r,h){var n=n-t,r=r-o,e=Math.sqrt(n*n+r*r),p=r/e,s=n/e,a=[];a.push(0,0);for(var u=0;u&lt;h.length;u+=2){var i=h[u],f=h[u+1];a.push(i&lt;0?e+i:i,f)}a.push(e,0);for(u=h.length;0&lt;u;u-=2){i=h[u-2],f=h[u-1];a.push(i&lt;0?e+i:i,-f)}a.push(0,0);for(u=0;u&lt;a.length;u+=2){i=a[u]*s-a[u+1]*p+t,f=a[u]*p+a[u+1]*s+o;0===u?this.moveTo(i,f):this.lineTo(i,f)}})}(CanvasRenderingContext2D);
+
+function Can_Grid_Maker(can) {
+  let e = can.getBoundingClientRect();
+  let ctx = can.getContext("2d");
+  let l = 50; // grid line increment
+  let j = 2 * l;
+  let [X, Y] = [e.width, e.height];
+  let [X0, Y0] = [j, Y - j];
+  let [X1, Y1] = [j, l];
+  let [X2, Y2] = [X - l, Y - j];
+  ctx.save(),
+    ctx.beginPath(), ctx.arrow(X0, Y0, X1, Y1, controlPoints), ctx.fill(), ctx.stroke(),
+    ctx.beginPath(), ctx.arrow(X0, Y0, j, Y - l, controlPoints), ctx.fill(), ctx.stroke(),
+    ctx.beginPath(), ctx.arrow(X0, Y0, X2, Y2, controlPoints), ctx.fill(), ctx.stroke(),
+    ctx.beginPath(), ctx.arrow(X0, Y0, l, Y2, controlPoints), ctx.fill(), ctx.stroke(),
+    ctx.restore();
+  ctx.save();
+  let i = parseInt(Y);
+  let x = 0;
+  while (i &gt; 0) {
+    x++;
+    i -= l / 5, w = x == 5 ? 1.5 : .3;
+    if (x == 5) {
+      x = 0;
+    }
+    ctx.lineWidth = w;
+    ctx.beginPath(), ctx.moveTo(0, i),
+      ctx.lineTo(X, i), ctx.stroke();
+  };
+  let k = 0;
+  while (k &lt; X) {
+    k += l / 5, w = k % l == 0 ? 1.5 : .3;
+    ctx.lineWidth = w;
+    ctx.beginPath(), ctx.moveTo(k, 0),
+      ctx.lineTo(k, Y), ctx.stroke();
+  }
+}
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 8</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 9</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
