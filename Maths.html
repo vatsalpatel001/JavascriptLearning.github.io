@@ -125,12 +125,19 @@ let AngleToPoints = (X,Y,D,A) =&gt; {return [parseInt(X + D * Math.cos(A)), pars
   return output
 }
 
-//calcPolygon({n: 3, r: 50, a: 0, cx: 0, cy: 0, round: 0})</textarea></div><br>
+//calcPolygon({n: 3, r: 50, a: 0, cx: 0, cy: 0, round: 0})</textarea><lable class="Title deleat count" vat-id="11">ID : 11 &amp; Title : calculate a point on a circle’s circumference?</lable><textarea class="txt deleat" vat-id="11">// R:Radius
+// A:angle in degree,..
+
+let DegToRad = (deg) =&gt;{return (Math.PI / 180) * deg};
+let X = (R,A) =&gt; (X0 + R * Math.cos(DegToRad(A)));
+ let Y = (R,A) =&gt; (Y0 + R * Math.sin(DegToRad(A)));
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 10</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 11</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
