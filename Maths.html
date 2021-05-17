@@ -108,12 +108,29 @@ function find_angle_three_point(A,B,C) {
 at Angle A from point X,Y*/
 
 let AngleToPoints = (X,Y,D,A) =&gt; {return [parseInt(X + D * Math.cos(A)), parseInt(Y + D * Math.sin(A))]}
-</textarea><lable class="Title deleat count" vat-id="9">ID : 9 &amp; Title : Distance Between two points </lable><textarea class="txt deleat" vat-id="9">let dist(x1,y1,x2,y2) =&gt; return Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) );</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="9">ID : 9 &amp; Title : Distance Between two points </lable><textarea class="txt deleat" vat-id="9">let dist(x1,y1,x2,y2) =&gt; return Math.sqrt( Math.pow((x1-x2), 2) + Math.pow((y1-y2), 2) );</textarea><lable class="Title deleat count" vat-id="10">ID : 10 &amp; Title : calculate regular polygon vertex coordinates</lable><textarea class="txt deleat" vat-id="10">function calcPolygon(input) {
+  //n: number of vertices = number of sides
+  //r: radius (circumscribed circle)
+  //a: counterclockwise rotation angle in radians
+  //cx: center x (offset)
+  //cy: center y (offset)
+  //round: number of decimal places to keep (0-20)
+  var output = []
+  for (var i = 1; i &lt;= input.n; i++) {
+    output.push({
+      x: ((input.r * Math.cos(input.a + 2 * i * Math.PI / input.n)) + input.cx).toFixed(input.round),
+      y: ((input.r * Math.sin(input.a + 2 * i * Math.PI / input.n)) + input.cy).toFixed(input.round)
+    })
+  }
+  return output
+}
+
+//calcPolygon({n: 3, r: 50, a: 0, cx: 0, cy: 0, round: 0})</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 9</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 10</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
