@@ -296,12 +296,40 @@ function Can_Grid_Maker(can) {
     n.fillText(t[e].T, a[0], a[1])
   }
   n.stroke(), n.restore()
+}</textarea><lable class="Title deleat count" vat-id="12">ID : 12 &amp; Title : Draw Arc Between two lines with angle notation,..</lable><textarea class="txt deleat" vat-id="12">// x,y center point,
+// X1,Y1 First Point,
+// X2,Y2 Second Point,
+// D Distance Arc Radius, 
+
+function VatArcDraw(x,y,X1,Y1,X2,Y2,D,ctx){
+
+let PointsToRadian= P2R=(a,t,n,e)=&gt;{t=e-t,a=n-a;return Math.atan2(t,a)};
+let RadToDeg = (red) =&gt;{return (red* 180) / Math.PI};
+let find_angle_three_point = P3A =(t,a,h) =&gt;{var M=Math.sqrt(Math.pow(a.x-t.x,2)+Math.pow(a.y-t.y,2)),a=Math.sqrt(Math.pow(a.x-h.x,2)+Math.pow(a.y-h.y,2)),t=Math.sqrt(Math.pow(h.x-t.x,2)+Math.pow(h.y-t.y,2));return Math.acos((a*a+M*M-t*t)/(2*a*M))};
+let AngleToPoints = (X,Y,D,A) =&gt; {return [parseInt(X + D * Math.cos(A)), parseInt(Y + D * Math.sin(A))]};
+
+let R1=P2R(x,y,X1,Y1);let R2=P2R(x,y,X2,Y2);
+
+let R3=(R1+R2)/2;R2&lt;-3?R3=(R1+Math.abs(R2))/2:3&lt;R1&amp;&amp;(R3=(eval("-"+R1)+R2)/2);
+
+let A =Math.round(RadToDeg(P3A({x:X1,y:Y1},{x:x,y:y},{x:X2,y:Y2})));
+
+let [c1,c2] = AngleToPoints(x,y,D+20,R3);
+
+ctx.save(),ctx.lineWidth=2,
+ctx.beginPath(),ctx.moveTo(x,y),
+ctx.arc(x,y, D, R1,R2 ),
+ctx.fillStyle = "green",
+ctx.textBaseline = "top",
+ctx.font = "500 14px Verdana";
+ctx.fillText(A+ "°" , c1,c2);
+ctx.stroke(), ctx.restore();
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 11</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 12</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
