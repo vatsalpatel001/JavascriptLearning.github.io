@@ -132,12 +132,41 @@ let DegToRad = (deg) =&gt;{return (Math.PI / 180) * deg};
 let X = (R,A) =&gt; (X0 + R * Math.cos(DegToRad(A)));
  let Y = (R,A) =&gt; (Y0 + R * Math.sin(DegToRad(A)));
 
-</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="12">ID : 12 &amp; Title : intersection point of two line segments</lable><textarea class="txt deleat" vat-id="12">// Determine the intersection point of two line segments
+// Return FALSE if the lines don't intersect
+function intersect(x1, y1, x2, y2, x3, y3, x4, y4) {
+
+  // Check if none of the lines are of length 0
+    if ((x1 === x2 &amp;&amp; y1 === y2) || (x3 === x4 &amp;&amp; y3 === y4)) {
+        return false
+    }
+
+    denominator = ((y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1))
+
+  // Lines are parallel
+    if (denominator === 0) {
+        return false
+    }
+
+    let ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denominator
+    let ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / denominator
+
+  // is the intersection along the segments
+    if (ua &lt; 0 || ua &gt; 1 || ub &lt; 0 || ub &gt; 1) {
+        return false
+    }
+
+  // Return a object with the x and y coordinates of the intersection
+    let x = x1 + ua * (x2 - x1)
+    let y = y1 + ua * (y2 - y1)
+
+    return {x, y}
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 11</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 12</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
