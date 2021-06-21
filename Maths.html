@@ -161,12 +161,27 @@ function intersect(x1, y1, x2, y2, x3, y3, x4, y4) {
     let y = y1 + ua * (y2 - y1)
 
     return {x, y}
+}</textarea><lable class="Title deleat count" vat-id="13">ID : 13 &amp; Title : Intersection of two lines, each defined by a point and an angle</lable><textarea class="txt deleat" vat-id="13">function xsect(x0, y0, a0, x1, y1, a1) {
+    var toRad= Math.PI/180;
+    if ((((a0-a1) % 180) + 180) % 180 === 0) throw parallelError
+    if (((a0 % 180) + 180) % 180 === 90) {
+        // vertical line at x = x0
+        return [x0, Math.tan(a1*toRad) * (x0-x1) + y1]
+    }
+    else if (((a1 % 180) + 180) % 180 === 90) {
+        // vertical line at x = x0
+        return [x1, Math.tan(a0*toRan) * (x1-x0) + y0]
+    }
+    let m0 = Math.tan(a0*toRad) // Line 0: y = m0 (x - x0) + y0
+    let m1 = Math.tan(a1*toRad) // Line 1: y = m1 (x - x1) + y1
+    let x = ((m0 * x0 - m1 * x1) - (y0 - y1)) / (m0 - m1)
+    return [x, m0 * (x - x0) + y0]
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 12</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 13</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
