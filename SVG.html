@@ -64,12 +64,86 @@
     Triangle.setAttribute("style", "fill:white;stroke:black;stroke-width:3");
     return Triangle;
  }
-</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="3">ID : 3 &amp; Title : SVG Dimension Text At Angle A1</lable><textarea class="txt deleat" vat-id="3">function SvgTextMaker(X1,Y1,X2,Y2,A1,L1){
+
+let X=0;
+let Y=0;
+    X=(X1+X2)/2;
+    Y=(Y1+Y2)/2;
+X&lt;250?X-=20:X+=10;
+Y&lt;250?Y-=10:Y+=15;
+
+
+if(A1&gt;105 || A1&lt;-110){
+    A1+=180;
+    // X-=20;
+    // Y+=30;
+}
+let Text = document.createElementNS("http://www.w3.org/2000/svg","text");
+Text.setAttribute("x",X) ;
+Text.setAttribute("y",Y);
+Text.setAttribute("font-size", "20px");
+Text.setAttribute("stroke", "red");
+Text.setAttribute("transform", `rotate(${A1} ${X},${Y})`);
+
+Text.innerHTML=L1;
+// console.log(random_item([0.5,1,2,3,4,5]));
+console.log(Text)
+return Text;
+}</textarea><lable class="Title deleat count" vat-id="4">ID : 4 &amp; Title : SVG Text At Point,..</lable><textarea class="txt deleat" vat-id="4">function svgVerTextGen(X,Y,text){
+console.log(X,Y)
+X&lt;250?X-=20:X+=10;
+Y&lt;250?Y-=10:Y+=15;
+console.log(X,Y)
+let Text = document.createElementNS("http://www.w3.org/2000/svg","text");
+Text.setAttribute("x",X) ;
+Text.setAttribute("y",Y);
+Text.setAttribute("font-size", "20px");
+Text.setAttribute("stroke", "purple");
+// Text.setAttribute("transform", `rotate(${A1} ${X},${Y})`);
+Text.innerHTML=text;
+
+return Text;
+}</textarea><lable class="Title deleat count" vat-id="5">ID : 5 &amp; Title : SVG Arc Between To angle</lable><textarea class="txt deleat" vat-id="5">function SVGarc(t, e, n, r, o) {//x,y,radius,Startangle,endangle in degree
+    function s(t, e, n, r) {
+        r = (r - 90) * (Math.PI / 180);
+        return {
+            x: t + n * Math.cos(r),
+            y: e + n * Math.sin(r)
+        }
+    }
+    var u = o - r == 360;
+    const a = s(t, e, n, o - .01),
+        c = s(t, e, n, r),
+        i = o - r &lt;= 180 ? "0" : "1",
+        h = ["M", a.x, a.y, "A", n, n, 0, i, 0, c.x, c.y].join(" ");
+    u &amp;&amp; h.push("z");
+    let l = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    return l.setAttribute("d", h),
+     l.setAttribute("fill", "none"),
+      l.setAttribute("stroke", "purple"),
+      l.setAttribute("stroke-width", "3"), l
+}</textarea><lable class="Title deleat count" vat-id="6">ID : 6 &amp; Title : Find Angle between three point and Degree notation,.</lable><textarea class="txt deleat" vat-id="6">function DegreeNotation(x,y,a,b,c,d,r){
+
+let A1 = PoToRad(x,y,a,b);
+let A2 = PoToRad(x,y,c,d);
+console.log(A1,A2,RadToDeg(A1+A2));
+
+let A =(A1+A2)/2
+let [m,n]=AngleToPoints(x,y,60,A)
+let Text = document.createElementNS("http://www.w3.org/2000/svg","text");
+Text.setAttribute("x",m-10) ;
+Text.setAttribute("y",n);
+Text.setAttribute("font-size", "20px");
+Text.innerHTML=Math.round((RadToDeg(A2)-RadToDeg(A1)))+"°";
+return Text;
+
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 2</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 6</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
