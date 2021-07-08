@@ -138,12 +138,20 @@ Text.setAttribute("font-size", "20px");
 Text.innerHTML=Math.round((RadToDeg(A2)-RadToDeg(A1)))+"°";
 return Text;
 
+}</textarea><lable class="Title deleat count" vat-id="7">ID : 7 &amp; Title : svg arrow maker function</lable><textarea class="txt deleat" vat-id="7">function arrowGenrator(X,Y,L,A,Sw,clr,both){
+	let f=5;
+	let arrow1=`l-${Sw*f}-${Sw*f/3}v${Sw*f*2/3}l${Sw*f}-${Sw*f/3}`;
+	let arrow2=`l${Sw*f}-${Sw*f/3}v${Sw*f*2/3}l-${Sw*f}-${Sw*f/3}`;
+	if(!both){		arrow2="";	};
+	return ` &lt;path fill="${clr}" stroke="${clr}" stroke-width="${Sw}"
+  d="M${X} ${Y} ${arrow2} h${L} ${arrow1} "
+    transform="rotate(${A} ${X} ${Y})"/&gt;`;
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 6</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 7</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
