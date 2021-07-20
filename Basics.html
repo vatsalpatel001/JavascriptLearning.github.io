@@ -554,13 +554,21 @@ function convertIntObj(obj) {
 //"x","y","width","height"=attr name
 function RemoveAttr(element, ...attrs) {
   attrs.forEach(attr =&gt; element.removeAttribute(attr))
+}</textarea><lable class="Title deleat count" vat-id="70">ID : 70 &amp; Title : Get All Attributes of elements,...</lable><textarea class="txt deleat" vat-id="70">function getAttr(el){
+  let obj={};
+  for (var att, i = 0, atts = el.attributes, n = atts.length; i &lt; n; i++){
+    att = atts[i];
+      const parsed = parseInt(att.nodeValue, 10);
+      obj[att.nodeName] = isNaN(parsed) ? att.nodeValue : parsed;
+}
+return obj;
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 68</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 69</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
