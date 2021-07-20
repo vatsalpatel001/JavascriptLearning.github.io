@@ -518,13 +518,45 @@ for(let i=1;i&lt;arr.length;i++){
 	Opt +=`&lt;option value="${i}"&gt;${arr[i]}&lt;/option&gt;`
 }
 document.querySelector(Selector).innerHTML=Opt;
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="68">ID : 68 &amp; Title : Convert object string value to number</lable><textarea class="txt deleat" vat-id="68">//obj= {
+//     "fill": "black",
+//     "x": "696",
+//     "y": "26",
+//     "width": "8",
+//     "height": "62"
+// }
+
+
+function convertIntObj(obj) {
+  const res = {}
+  for (const key in obj) {
+    // console.log(obj[key])
+    // res[key] = {};
+    // for (const prop in obj[key]) {
+      const parsed = parseInt(obj[key], 10);
+      res[key] = isNaN(parsed) ? obj[key] : parsed;
+    // }
+  }
+  return res;
+}
+
+
+
+// resultobj = {
+//     "fill": "black",
+//     "x": 696,
+//     "y": 26,
+//     "width": 8,
+//     "height": 62
+// }
+
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 66</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 67</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
