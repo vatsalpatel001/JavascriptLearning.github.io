@@ -257,12 +257,46 @@ tgl &amp;&amp; (elmnt.onmousedown = null, elmnt.ontouchstart = null);
     el1.setAttribute("x", getMousePosition(e).x);
   }
 
+}</textarea><lable class="Title deleat count" vat-id="13">ID : 13 &amp; Title : points to bezier curve</lable><textarea class="txt deleat" vat-id="13">let p_obj ={
+    "PointsX": [905,878,712,690,583,522],
+    "PointsY": [173,120,115,219,269.6,316.5]
+}
+wireMAker(p_obj);
+function wireMAker(d) {
+
+	function f(d, e, f, g, h, j, k, l,i) {
+		return "M " + d + " " + e + " C " + f + " " + g + " " + h + " " + j + " " + k + " " + l
+	if(i&gt;0){
+		return " C " + f + " " + g + " " + h + " " + j + " " + k + " " + l
+	}
+	}
+
+	function g(d) {
+		for (p1 = [], p2 = [], n = d.length - 1, a = [], b = [], c = [], r = [], a[0] = 0, b[0] = 2, c[0] = 1, r[0] = d[0] + 2 * d[1], i = 1; i &lt; n - 1; i++) a[i] = 1, b[i] = 4, c[i] = 1, r[i] = 4 * d[i] + 2 * d[i + 1];
+		for (a[n - 1] = 2, b[n - 1] = 7, c[n - 1] = 0, r[n - 1] = 8 * d[n - 1] + d[n], i = 1; i &lt; n; i++) m = a[i] / b[i - 1], b[i] -= m * c[i - 1], r[i] -= m * r[i - 1];
+		for (p1[n - 1] = r[n - 1] / b[n - 1], i = n - 2; 0 &lt;= i; --i) p1[i] = (r[i] - c[i] * p1[i + 1]) / b[i];
+		for (i = 0; i &lt; n - 1; i++) p2[i] = 2 * d[i + 1] - p1[i + 1];
+		return p2[n - 1] = .5 * (d[n] + p1[n - 1]), {
+			p1: p1,
+			p2: p2
+		}
+	}
+	let h = d.PointsX.length,
+		j = [...d.PointsX],
+		k = [...d.PointsY];
+	let l = j,
+		o = k,
+		p = g(l),
+		q = g(o),
+		s = "&lt;path  stroke=\"blue\" stroke-width=\""+5+"\" fill=\"none\" d=\"";
+	for (i = 0; i &lt; l.length - 1; i++) s += " " + f(l[i], o[i], p.p1[i], q.p1[i], p.p2[i], q.p2[i], l[i + 1], o[i + 1],i);
+	return s += "\" /&gt;", s
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 12</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 13</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
