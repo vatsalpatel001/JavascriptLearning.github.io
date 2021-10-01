@@ -572,13 +572,17 @@ Str=Str.replace(/[\n\t\r]/g, "").replace(/\s+/g, " ").trim();
 
 //improved Version of Trim()
 
-</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="75">ID : 75 &amp; Title : Get the closest number out of an array</lable><textarea class="txt deleat" vat-id="75">console.log(returnZ([4, 9, 15, 6, 2],15.2))//15
+
+function returnZ(counts,goal){
+return counts.reduce((prev, curr) =&gt; Math.abs(curr - goal) &lt; Math.abs(prev - goal) ? curr : prev);
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 73</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 74</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
