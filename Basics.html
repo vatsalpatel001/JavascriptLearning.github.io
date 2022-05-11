@@ -610,13 +610,30 @@ window.addEventListener('message', function(event) {
   console.log(JSON.parse(event.data)[0])
 
 })
-</textarea></div><br>
+</textarea><lable class="Title deleat count" vat-id="81">ID : 81 &amp; Title : Merge/flatten an array of arrays</lable><textarea class="txt deleat" vat-id="81">var arrays = [
+  ["$6"],
+  ["$12"],
+  ["$25"],
+  ["$25"],
+  ["$18"],
+  ["$22"],
+  ["$10"]
+];
+var merged = [].concat.apply([], arrays);
+
+console.log(merged);</textarea><lable class="Title deleat count" vat-id="82">ID : 82 &amp; Title : Remove empty elements from an array in Javascript</lable><textarea class="txt deleat" vat-id="82">var array = [0, 1, null, 2, "", 3, undefined, 3,,,,,, 4,, 4,, 5,, 6,,,,];
+
+var filtered = array.filter(function (el) {
+  return el != null;
+});
+
+console.log(filtered)</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 79</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 81</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
