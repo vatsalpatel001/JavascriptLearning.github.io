@@ -37,12 +37,18 @@ localStorage.setItem(id+"_Arr", instr_arr);
   html = $.parseHTML( str ); 
  
 // Append the parsed HTML
-$log.append( html );</textarea></div><br>
+$log.append( html );</textarea><lable class="Title deleat count" vat-id="5">ID : 5 &amp; Title : show all records on datatables table when click button</lable><textarea class="txt deleat" vat-id="5">    var instance = new $.fn.dataTable.Api( '#table_id' )
+    
+    let c_len =instance.page.len();
+ instance
+    .page.len(-1) // set the length to -1
+    .draw();
+</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 4</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 5</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
