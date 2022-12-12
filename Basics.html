@@ -637,13 +637,38 @@ for (var key in p) {
     if (p.hasOwnProperty(key)) {
         console.log(key + " -&gt; " + p[key]);
     }
-}</textarea><lable class="Title deleat count" vat-id="84">ID : 84 &amp; Title : millisecond to minute and second</lable><textarea class="txt deleat" vat-id="84">var ms = 298999, min = Math. floor((ms/1000/60) &lt;&lt; 0), sec = Math. floor((ms/1000) % 60); console. log(min + ':' + sec);</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="84">ID : 84 &amp; Title : millisecond to minute and second</lable><textarea class="txt deleat" vat-id="84">var ms = 298999, min = Math. floor((ms/1000/60) &lt;&lt; 0), sec = Math. floor((ms/1000) % 60); console. log(min + ':' + sec);</textarea><lable class="Title deleat count" vat-id="85">ID : 85 &amp; Title : Nested object convert a string to boolean</lable><textarea class="txt deleat" vat-id="85">function objStrToBool(result) {
+    function iter(o) {
+        Object.keys(o).forEach(function (k) {
+            if (o[k] !== null &amp;&amp; typeof o[k] === 'object') {
+                iter(o[k]);
+                return;
+            }
+            // if (typeof o[k] === 'number') {
+            //     // o[k] = o[k].replace(/'/g, "''");
+            //     // o[k] = o[k].replace(/a/g, "nnnnnn");
+            //     o[k] = o[k] - 1
+            // }
+
+
+            let value = o[k];
+            value = (value === 'true' ? true : value === 'false' ? false : value);
+            o[k] = value;
+
+        });
+    }
+    // if(result !== null &amp;&amp; typeof result === 'object'){
+    iter(result)
+    // }
+    // console.log(result,typeof(result))   
+    return result;
+}</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 83</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 84</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
