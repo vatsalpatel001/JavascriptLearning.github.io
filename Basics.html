@@ -685,13 +685,19 @@ function isNode(o) {
         typeof Node === "object" ? o instanceof Node :
             o &amp;&amp; typeof o === "object" &amp;&amp; typeof o.nodeType === "number" &amp;&amp; typeof o.nodeName === "string"
     );
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="88">ID : 88 &amp; Title : object to array</lable><textarea class="txt deleat" vat-id="88">let obj = {
+    "x": 0,
+    "y": 0,
+    "z": 0
+}
+let obj_to_arr =  Object.keys(obj).map((key) =&gt; obj[key]);
+let obj_to_str =  Object.keys(obj).map((key) =&gt; obj[key]).join(" ");</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 86</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 87</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
