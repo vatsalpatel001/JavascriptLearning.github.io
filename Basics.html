@@ -662,13 +662,30 @@ for (var key in p) {
     // }
     // console.log(result,typeof(result))   
     return result;
+}</textarea><lable class="Title deleat count" vat-id="86">ID : 86 &amp; Title : getXPathForElement and getElementByXPath</lable><textarea class="txt deleat" vat-id="86">function getXPathForElement(element) {
+    const idx = (sib, name) =&gt; sib
+        ? idx(sib.previousElementSibling, name || sib.localName) + (sib.localName == name)
+        : 1;
+    const segs = elm =&gt; !elm || elm.nodeType !== 1
+        ? ['']
+        : elm.id &amp;&amp; document.getElementById(elm.id) === elm
+            ? [`id("${elm.id}")`]
+            : [...segs(elm.parentNode), `${elm.localName.toLowerCase()}[${idx(elm)}]`];
+    return segs(element).join('/');
+}
+
+function getElementByXPath(path) {
+    return (new XPathEvaluator())
+        .evaluate(path, document.documentElement, null,
+            XPathResult.FIRST_ORDERED_NODE_TYPE, null)
+        .singleNodeValue;
 }</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 84</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 85</textarea> 
 	<br>
 	
 	<script type="text/javascript" src="main.js"></script></body>
