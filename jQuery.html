@@ -71,12 +71,73 @@ $('div:not(#myid)');
             //file exists
         }
     });
-}</textarea></div><br>
+}</textarea><lable class="Title deleat count" vat-id="9">ID : 9 &amp; Title : jQuery data table with select filter</lable><textarea class="txt deleat" vat-id="9">    &lt;table id="example"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Position&lt;/th&gt;
+                &lt;th&gt;Office&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+                &lt;th&gt;Start date&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Tiger Nixon&lt;/td&gt;
+                &lt;td&gt;System Architect&lt;/td&gt;
+                &lt;td&gt;Edinburgh&lt;/td&gt;
+                &lt;td&gt;61&lt;/td&gt;
+                &lt;td&gt;2011/04/25&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Garrett Winters&lt;/td&gt;
+                &lt;td&gt;Accountant&lt;/td&gt;
+                &lt;td&gt;Tokyo&lt;/td&gt;
+                &lt;td&gt;63&lt;/td&gt;
+                &lt;td&gt;2011/07/25&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;!-- Add more rows here --&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;script&gt;
+        $(document).ready(function () {
+            //   $('#example').DataTable();
+            $(`#example`).dataTable({
+                initComplete: function () {
+                    this.api().columns([1, 2, 3]).every(function () {
+                        var column = this;
+                        var select = $(`&lt;select&gt;&lt;option value=""  disabled selected&gt;${$(column.header()).html()}&lt;/option&gt;&lt;option value="" &gt;Select All&lt;/option&gt;&lt;/select&gt;`)
+                            .appendTo($(column.header()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+
+                                );
+
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('&lt;option value="' + d + '"&gt;' + d + '&lt;/option&gt;')
+                        });
+                    });
+
+                },
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+
+            });
+        });
+    &lt;/script&gt;</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 8</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 9</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
