@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Check throttle vs debounce</h1>
+    <input placeholder="throttle" id="search-bar">
+    <input placeholder="debounce" id="search-bar1">
+    <textarea id="output" style="width: 100vw;height: 200px;"></textarea>
+    <script>
+        var searchBarDom = document.getElementById('search-bar');
+var numberOfKeyPresses = 0;
+var numberOfApiCalls = 0;
+
+const getSearchResult = throttle(() => {
+  numberOfApiCalls += 1;
+  console.log('Number of API Calls : ' + numberOfApiCalls);
+  console.log(searchBarDom.value)
+
+document.getElementById("output").innerHTML = document.getElementById("output").innerHTML+'\n Number of throttle Calls : ' + numberOfApiCalls +" and Value is "+ searchBarDom.value
+
+}, 1000);
+
+searchBarDom.addEventListener('input', function (e) {
+  numberOfKeyPresses += 1;
+//   console.log('Search Keyword : ' + e.target.value);
+//   console.log('Number of Key Presses : ' + numberOfKeyPresses);
+  getSearchResult();
+});
+
+
+function throttle(callback, delay = 1000) {
+  let shouldWait = false;
+
+  return (...args) => {
+    if (shouldWait) return;
+
+    callback(...args);
+    shouldWait = true;
+    setTimeout(() => {
+      shouldWait = false;
+    }, delay);
+  };
+}
+
+
+var searchBarDom1 = document.getElementById('search-bar1');
+var numberOfKeyPresses = 0;
+var numberOfApiCalls = 0;
+
+const getSearchResult1 = debounce(() => {
+  numberOfApiCalls += 1;
+  console.log('Number of API Calls : ' + numberOfApiCalls);
+
+  console.log(searchBarDom1.value)
+  document.getElementById("output").innerHTML = document.getElementById("output").innerHTML+'\n Number of debounce Calls : ' + numberOfApiCalls +" and Value is "+ searchBarDom1.value
+
+}, 1000);
+
+searchBarDom1.addEventListener('input', function (e) {
+  numberOfKeyPresses += 1;
+//   console.log('Search Keyword : ' + e.target.value);
+//   console.log('Number of Key Presses : ' + numberOfKeyPresses);
+  getSearchResult1();
+});
+
+function debounce(callback, delay = 1000) {
+  var time;
+  return (...args) => {
+    clearTimeout(time);
+    time = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+}
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
