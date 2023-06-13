@@ -264,12 +264,30 @@ Deferred load (defer) ensures scripts are executed after the entire HTML documen
 
 Global scope: In the global scope (outside of any function), this refers to the global object, which is typically window in a web browser environment 
 
-Event handlers: When a function is used as an event handler, this refers to the DOM element that triggered the event.</textarea></div><br>
+Event handlers: When a function is used as an event handler, this refers to the DOM element that triggered the event.</textarea><lable class="Title deleat count" vat-id="26">ID : 26 &amp; Title : JavaScript single-threaded and has a synchronous execution model</lable><textarea class="txt deleat" vat-id="26">JavaScript is inherently single-threaded and has a synchronous execution model, which means that code is executed in a sequential and blocking manner by default. Each line of code is executed one after the other, and the program waits for each operation to complete before moving on to the next.
+
+However, JavaScript also has mechanisms to handle asynchronous operations, allowing non-blocking execution. Asynchronous operations, such as fetching data from a server or reading files, do not halt the program's execution while waiting for a response. Instead, they are initiated, and the program continues to execute other tasks without waiting for the asynchronous operation to complete.
+
+The main difference between synchronous and asynchronous code execution is how they handle waiting for operations to finish:
+
+Synchronous Execution:
+
+Code is executed in a sequential and blocking manner.
+Each operation must complete before the program moves to the next one.
+The program waits for I/O operations or time-consuming tasks to finish, blocking further execution.
+Asynchronous Execution:
+
+Code is executed non-sequentially, allowing other operations to proceed while waiting for a particular operation to complete.
+Asynchronous operations are initiated, and the program continues executing without waiting for them to finish.
+A callback function or promises are typically used to handle the completion of asynchronous operations and perform further actions.
+Asynchronous execution is crucial for handling time-consuming tasks without blocking the main thread, which would result in unresponsive user interfaces or slow performance. JavaScript provides mechanisms like callbacks, promises, and async/await to handle asynchronous code in a more organized and readable way.
+
+By using asynchronous techniques, JavaScript can efficiently handle I/O operations, network requests, and other time-consuming tasks, providing a more responsive and performant user experience.</textarea></div><br>
 	<br>
 	<textarea class="sub subover" id="code0" placeholder="ID"></textarea> 
 	<textarea class="sub subover" id="code1" placeholder="Title"></textarea> <br>
 	<textarea class="sub subover" id="code2" placeholder="code"></textarea><br>
 	<a href="javascript:runner()" id="btn">Submit</a> <a href="javascript:deleat()" id="btn">Delete</a> <a href="javascript:down()" id="btn">Download</a> 
-	<textarea class="sub subover subover1" id="code3">Number of ID : 25</textarea> 
+	<textarea class="sub subover subover1" id="code3">Number of ID : 26</textarea> 
 	<br>
 	<script type="text/javascript" src="main.js"></script></body>
